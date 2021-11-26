@@ -8,8 +8,8 @@ import re
 class Product:
     # FIXME: klasa powinna posiadać metodę inicjalizacyjną przyjmującą argumenty wyrażające nazwę produktu (typu str) i jego cenę (typu float) -- w takiej kolejności -- i ustawiającą atrybuty `name` (typu str) oraz `price` (typu float)
     def __init__(self, name: str, price: float) -> None:
-        name_pattern = re.compile("^[a-zA-Z]{1, }\\d{1, }$")
-        if name_pattern.match(name) and price > 0:
+        name_pattern = re.compile("^[a-zA-Z]{1,}\\d{1,}$")
+        if name_pattern.match(name) and price >= 0:
             self.name = name
             self.price = price
         else:
@@ -17,7 +17,7 @@ class Product:
 
     def __eq__(self, other) -> bool:
         return self.name == other.name and self.price == other.price  # FIXME: zwróć odpowiednią wartość
-
+#To trzeba wyrzucić bo konspekt mówi, ze nie może tak być
     def __lt__(self, other) -> bool:
         return self.price < other.price
 
@@ -45,7 +45,7 @@ class Server(ABC):
 
     def get_entries(self, n_letters: int = 1) -> List[Product]:
         pattern = '^[a-zA-Z]{{{n_letters}}}\\d{{2,3}}$'.format(n_letters=n_letters)
-        entries = [p for p in self.get_all_products(n_letters)
+        entries = [p for p in self.get_all_products()
                    if re.match(pattern, p.name)]
         if len(entries) > Server.n_max_returned_entries:
             raise TooManyProductsFoundError
@@ -69,7 +69,7 @@ class ListServer(Server):
 class MapServer(Server):
     def __init__(self, products: List[Product], *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
-        self.products: Dict[str, Product] = {i.name : i for i in products}
+        self.products: Dict[str, Product] = {i.name: i for i in products}
 
     def get_all_products(self) -> List[Product]:
         return list(self.products.values())
