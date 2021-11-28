@@ -15,7 +15,7 @@ class ProductTest(unittest.TestCase):
 class ServerTest(unittest.TestCase):
 
     def test_get_entries_returns_proper_entries(self):
-        products = [Product('P7', 1), Product('PP234', 2), Product('P', 1), Product('PPP345', 4)]
+        products = [Product('P7', 1), Product('PP234', 2), Product('P5', 1), Product('PPP345', 4)]
         for server_type in server_types:
             server = server_type(products)
             entries = server.get_entries(2)

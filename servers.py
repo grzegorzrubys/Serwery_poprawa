@@ -17,6 +17,7 @@ class Product:
 
     def __eq__(self, other) -> bool:
         return self.name == other.name and self.price == other.price  # FIXME: zwróć odpowiednią wartość
+
 #To trzeba wyrzucić bo konspekt mówi, ze nie może tak być
     def __lt__(self, other) -> bool:
         return self.price < other.price
