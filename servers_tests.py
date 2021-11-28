@@ -19,7 +19,7 @@ class ServerTest(unittest.TestCase):
         for server_type in server_types:
             server = server_type(products)
             entries = server.get_entries(2)
-            self.assertEqual(Counter([products[2], products[1]]), Counter(entries))
+            self.assertEqual(Counter([products[1]]), Counter(entries))
 
     def test_exceptions_was_raised(self):
         products = [Product('PP12', 8), Product('PP123', 3), Product('PP132', 9), Product('PP321', 5)]

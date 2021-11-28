@@ -18,10 +18,6 @@ class Product:
     def __eq__(self, other) -> bool:
         return self.name == other.name and self.price == other.price  # FIXME: zwróć odpowiednią wartość
 
-#To trzeba wyrzucić bo konspekt mówi, ze nie może tak być
-    def __lt__(self, other) -> bool:
-        return self.price < other.price
-
     def __hash__(self):
         return hash((self.name, self.price))
 
@@ -50,7 +46,7 @@ class Server(ABC):
                    if re.match(pattern, p.name)]
         if len(entries) > Server.n_max_returned_entries:
             raise TooManyProductsFoundError
-        return sorted(entries)
+        return sorted(entries, key=lambda entr: entr.price)
 
     @abstractmethod
     def get_all_products(self) -> List[Product]:
