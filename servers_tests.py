@@ -5,11 +5,17 @@ from servers import ListServer, Product, Client, MapServer, TooManyProductsFound
 
 server_types = (ListServer, MapServer)
 
+class ProductTest(unittest.TestCase):
+
+    def test_wrong_name(self):
+        with self.assertRaises(ValueError):
+            products = [Product('P', 4), Product('123', 2), Product('PP132', 9), Product('PP321', 5)]
+
 
 class ServerTest(unittest.TestCase):
 
     def test_get_entries_returns_proper_entries(self):
-        products = [Product('P12', 1), Product('PP234', 2), Product('PP235', 1), Product('PPP345', 4)]
+        products = [Product('P7', 1), Product('PP234', 2), Product('P', 1), Product('PPP345', 4)]
         for server_type in server_types:
             server = server_type(products)
             entries = server.get_entries(2)
