@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>Python</ID>
+  <OriginalElement>#C:/Users/dom/PycharmProjects/PSIO/Semestr_III/Serwery_poprawa/servers.py</OriginalElement>
+  <nodes>
+    <node x="353.2500000000001" y="328.0">servers.TooManyProductsFoundError</node>
+    <node x="86.07720588235298" y="83.0">abc.ABCMeta</node>
+    <node x="215.07720588235298" y="166.0">servers.Client</node>
+    <node x="425.75" y="166.0">BaseException</node>
+    <node x="571.75" y="166.0">servers.Product</node>
+    <node x="107.07720588235298" y="166.0">abc.ABC</node>
+    <node x="89.57720588235298" y="247.0">servers.Server</node>
+    <node x="0.0" y="328.0">servers.ListServer</node>
+    <node x="367.2683823529412" y="0.0">typing.Hashable</node>
+    <node x="440.25000000000006" y="247.0">Exception</node>
+    <node x="164.00000000000006" y="328.0">servers.MapServer</node>
+    <node x="312.75" y="83.0">object</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="abc.ABC" target="abc.ABCMeta" relationship="INSTANCEOF">
+      <point x="-22.0" y="-15.5" />
+      <point x="129.07720588235298" y="140.0" />
+      <point x="146.07720588235298" y="140.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="servers.Product" target="object" relationship="REALIZATION">
+      <point x="-33.25" y="-15.5" />
+      <point x="605.0" y="140.0" />
+      <point x="350.75" y="140.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="object" target="typing.Hashable" relationship="INTERFACE">
+      <point x="0.0" y="-15.5" />
+      <point x="350.75" y="57.0" />
+      <point x="436.7683823529412" y="57.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="abc.ABC" target="object" relationship="REALIZATION">
+      <point x="22.0" y="-15.5" />
+      <point x="173.07720588235298" y="140.0" />
+      <point x="350.75" y="140.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="servers.Client" target="object" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="274.577205882353" y="140.0" />
+      <point x="350.75" y="140.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="servers.TooManyProductsFoundError" target="Exception" relationship="REALIZATION">
+      <point x="-5.6843418860808015E-14" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="servers.Server" target="abc.ABC" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="servers.MapServer" target="servers.Server" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="240.00000000000006" y="303.0" />
+      <point x="151.07720588235298" y="303.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="Exception" target="BaseException" relationship="REALIZATION">
+      <point x="-5.6843418860808015E-14" y="-15.5" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="servers.Product" target="typing.Hashable" relationship="INTERFACE">
+      <point x="33.25" y="-15.5" />
+      <point x="671.5" y="140.0" />
+      <point x="643.25" y="140.0" />
+      <point x="643.25" y="57.0" />
+      <point x="436.7683823529412" y="57.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="BaseException" target="object" relationship="REALIZATION">
+      <point x="-5.6843418860808015E-14" y="-15.5" />
+      <point x="488.74999999999994" y="140.0" />
+      <point x="350.75" y="140.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="servers.ListServer" target="servers.Server" relationship="REALIZATION">
+      <point x="0.0" y="-15.5" />
+      <point x="72.0" y="303.0" />
+      <point x="151.07720588235298" y="303.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="352.5" y="179.5" />
+  <SelectedNodes />
+  <Categories />
+</Diagram>
+
