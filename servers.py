@@ -81,7 +81,7 @@ class Client:
         try:
             res = self.server.get_entries(n_letters)
             total_price = 0
-            if res is not None:
+            if res is not None and len(res) > 0:
                 for i in res:
                     total_price += i.price
                 return total_price
